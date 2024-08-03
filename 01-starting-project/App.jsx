@@ -26,6 +26,7 @@ function App() {
            <CoreConcepts {...CORE_CONCEPTS[2]}/>
 
            <CoreConcepts {...CORE_CONCEPTS[3]}/>
+           //comment
         </ul>
       </main>
     </div>
