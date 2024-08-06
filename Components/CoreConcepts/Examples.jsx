@@ -2,7 +2,7 @@ import { useState } from "react";
 import { EXAMPLES } from "../../data.js";
 import Buttons from "../Buttons/Buttons";
 import Section from "../Sections.jsx";
-
+import Tab from "../Tabs.jsx";
 export default function Examples()
 { 
     const [selectTopic, setSelectedTopic] =  useState();
@@ -20,14 +20,12 @@ export default function Examples()
              </div>
     }
     return(  <Section title = "Examples" id = "examples">
-
-    <menu>
-      <Buttons isSelected={selectTopic === 'guards'} onClick={()=>handleSelect('guards')}>Guards</Buttons>
+<Tab ButtonsContainer= "menu" buttons ={ <><Buttons isSelected={selectTopic === 'guards'} onClick={()=>handleSelect('guards')}>Guards</Buttons>
       <Buttons isSelected={selectTopic === 'submissions'} onClick={()=>handleSelect('submissions')}>Submissions</Buttons>
       <Buttons isSelected={selectTopic === 'escapes'} onClick={()=>handleSelect('escapes')}>Escapes</Buttons>
-      <Buttons isSelected={selectTopic === 'throws'} onClick={()=>handleSelect('throws')}>Throws</Buttons>
-    </menu>
-    {tabContent}
+      <Buttons isSelected={selectTopic === 'throws'} onClick={()=>handleSelect('throws')}>Throws</Buttons></>}>{tabContent}</Tab>
+    
+   
   </Section>
 );
 }
